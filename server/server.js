@@ -12,6 +12,20 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.get('/', (req, res) => {
+  console.log("root")
+  res.send({
+    express: 'Hello From Express'
+  });
+});
+
 app.get('/api/hello', (req, res) => {
   res.send({
     express: 'Hello From Express'
@@ -23,12 +37,6 @@ app.post('/api/world', (req, res) => {
     `I received your POST request. This is what you sent me: ${req.body.post}`,
   );
 });
-
-// const httpsOptions = {
-  // key: fs.readFileSync('./localhost-ssl/server.key'),
-  // cert: fs.readFileSync('./localhost-ssl/server.crt')
-// }
-// const server = https.createServer(httpsOptions, app);
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => console.log(`Listening on port ${port}`));

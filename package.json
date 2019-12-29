@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "nodemon server.js",
+    "server": "cd server && nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "test": "jest"
+    "test": "cd server && jest"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
