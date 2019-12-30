@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const todos = require('./database/queries.js');
+const todos = require('./database/todo-queries.js');
 
 function createToDo(req, data) {
   const protocol = req.protocol, 
