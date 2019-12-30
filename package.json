@@ -1,11 +1,12 @@
 {
-  "name": "fullstack-interview-boiler",
+  "name": "todo-backend-express-knex",
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
     "server": "cd server && nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "test": "cd server && jest"
+    "test": "cd server && jest",
+    "test:watch": "cd server && jest --watch"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -13,6 +14,7 @@
     "express": "^4.16.4",
     "jest": "^24.9.0",
     "knex": "^0.20.5",
+    "lodash": "^4.17.15",
     "nodemon": "^2.0.2",
     "pg": "^7.14.0",
     "supertest": "^4.0.2"
