@@ -6,7 +6,8 @@
     "server": "cd server && nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "test": "cd server && jest",
-    "test:watch": "cd server && jest --watch"
+    "test:watch": "cd server && jest --watch",
+    "start": "cd server && node server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
