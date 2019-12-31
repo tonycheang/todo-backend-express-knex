@@ -22,20 +22,21 @@ Bonus features include a simple frontend boostrapped with create-react-app and t
     % psql postgres -U your_username_here
     postgres=> CREATE DATABASE name_of_db;
     postgres=> GRANT ALL PRIVILEGES ON DATABASE name_of_db TO your_username_here;
+    postgres=> \q
     ```
 
     > You could change the default database, but Knex's .returning() method will only work for PostgreSQL, MSSQL, and Oracle databases. Modifications will be needed for other databases to meet the todo-backend spec.
 
-4. Add Postgres credentials into .env to allow knex to connect to the database.
+4. Add Postgres credentials into server/.env to allow Knex to connect to the database.
 5. Install Knex globally.
 
     `npm install knex -g`
 
 6. Set up the database using Knex migrations.
 
-    `knex migrate:latest`
+    `cd server && knex migrate:latest`
 
-7. Start the server on http://localhost:5000:
+7. Start the server on [http://localhost:5000](http://localhost:5000).
 
     `yarn server`
 
@@ -43,7 +44,7 @@ Bonus features include a simple frontend boostrapped with create-react-app and t
 
 ## Bonus Features
 
-- Run tests locally using either:
+- Run tests locally using either.
 
     `yarn test`
 
@@ -52,11 +53,11 @@ Bonus features include a simple frontend boostrapped with create-react-app and t
     >The second command requires watchman  
     >`brew install watchman`
 
-- Install create-react-app frontend:
+- Install create-react-app frontend starting at root directory:
 
     `cd client && yarn install`
 
-- Run backend and frontend simultaneously:
+- Run backend and frontend simultaneously from root directory.
 
     `yarn dev`
 
