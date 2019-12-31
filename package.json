@@ -2,7 +2,7 @@
   "name": "todo-backend-express-knex",
   "version": "1.0.0",
   "scripts": {
-    "heroku-postbuild": "npm install knex -g && cd server && knex migrate:latest",
+    "heroku-postbuild": "cd server && npx knex migrate:latest",
     "client": "cd client && yarn start",
     "server": "cd server && nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
